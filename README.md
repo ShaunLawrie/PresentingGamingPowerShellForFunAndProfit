@@ -15,3 +15,7 @@
     - How to write modular shell scripts
   - Inputs
     - Ways to collect input in powershell
+  - Food
+    - How to grow the snake and score
+  - Gameover
+    - How to interact with the interwebs
