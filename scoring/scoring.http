@@ -1,0 +1,36 @@
+@scoring_HostAddress = http://localhost:5187
+
+###
+GET {{scoring_HostAddress}}/scores
+Accept: application/json
+
+###
+GET {{scoring_HostAddress}}/scores/top
+Accept: application/json
+
+###
+GET {{scoring_HostAddress}}/scores/top?limit=3
+Accept: application/json
+
+###
+POST {{scoring_HostAddress}}/scores
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "User {{$datetime "DD-MM-YYYY HH:mm:ss"}}",
+  "value": {{$randomInt 1 20}}
+}
+
+###
+POST {{scoring_HostAddress}}/scores
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "John Doe",
+  "value": 1002
+}
+
+###
+DELETE {{scoring_HostAddress}}/scores
