@@ -15,6 +15,9 @@ function Invoke-GameRender {
         [int] $Score
     )
 
+    # Disable the cursor
+    Write-Host -NoNewline "`e[?25l"
+
     for($row = 0; $row -lt $Height; $row++) {
         for($col = 0; $col -lt $Width; $col++) {
             if(Test-Collision -ObjectToTest $snake -CurrentPositionX $col -CurrentPositionY $row) {
