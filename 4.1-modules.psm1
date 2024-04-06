@@ -62,7 +62,7 @@ function Move-Snake {
         [int] $Height
     )
 
-    $head = $Snake[0]
+    $head = $Snake[0].Clone()
 
     switch ($Direction) {
         "Up"    { $head.Y-- }
@@ -82,14 +82,6 @@ function Move-Snake {
     } elseif($head.Y -ge $Height) {
         $head.Y = 0
     }
-
-    # get the snake minus it's head
-    if($Snake.Length -gt 1) {
-        $remainingSnake = $Snake[1..$Snake.Length]
-    }
     
-    return @(
-        $head,
-        $remainingSnake
-    )
+    return $head, $Snake
 }
