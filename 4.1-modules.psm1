@@ -83,5 +83,5 @@ function Move-Snake {
         $head.Y = 0
     }
     
-    return $head, $Snake
+    return @($head) + $Snake
 }
