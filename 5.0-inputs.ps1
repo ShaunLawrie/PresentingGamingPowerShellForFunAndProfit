@@ -18,6 +18,6 @@ $snake = @(
 while($true) {
     $snake = Move-Snake -Snake $snake -Direction $direction -Width $Width -Height $Height
     Invoke-GameRender -Width $Width -Height $Height -Snake $snake -Food $food
-    Start-Sleep -Seconds 1
+    Start-Sleep -Milliseconds 500
     $direction = Get-Direction -CurrentDirection $direction
 }
