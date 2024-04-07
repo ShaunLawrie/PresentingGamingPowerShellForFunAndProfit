@@ -46,7 +46,7 @@ try {
             },
             @{
                 Code = "[Purple_2]``e[[1A[/] $greySlash [Purple_2]``e[[1B[/] $greySlash [Purple_2]``e[[1C[/] $greySlash [Purple_2]``e[[1D[/]"
-                Description = "move cursor 1 up / down / left / right"
+                Description = "move cursor 1 up / down / right / left"
             },
             @{
                 Code = "[Purple_2]``r[/]"

@@ -1,8 +1,19 @@
 # CodeCampTalk2024
 
+## Prep
+
+- Google-ThatShit
+- Neovim is available
+- Terminal font size default is set
+- ZoomIt is installed
+- Sound is working
+
+## Content
+
+- Who am I
 - Intro to terminals
   - Demo of ANSI escape codes
-  - Demo of a "loading bar"
+  - What's the game?
 - Intro to powershell
   - Intro to the ps1 script
   - Intro to the simple data types
