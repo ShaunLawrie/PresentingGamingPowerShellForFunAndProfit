@@ -11,6 +11,7 @@
 - Open simple browser
 - Open readme
 - Open chat
+- Set session timer
 
 ## Content
 
