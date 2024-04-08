@@ -10,6 +10,7 @@
 - Scoring is running
 - Open simple browser
 - Open readme
+- Open chat
 
 ## Content
 
