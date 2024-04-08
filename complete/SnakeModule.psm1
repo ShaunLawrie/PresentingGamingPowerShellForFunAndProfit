@@ -249,7 +249,7 @@ function Write-GameGrid {
                 }
                 $null = $screen.Append("$escape[38;2;155;200;9m$escape[48;2;${r};${g};${b}m░░$escape[0m")
             } elseif($Food.Y -eq $y -and $Food.X -eq $x) {
-                $null = $screen.Append("$escape[30;41m  $escape[0m")
+                $null = $screen.Append("$escape[38;2;155;200;9m  $escape[0m")
             } elseif($null -ne $PowerUp -and $PowerUp.Y -eq $y -and $PowerUp.X -eq $x) {
                 if($PowerUp.Timeout -lt ($PowerUpLifetime / 4)) {
                     if($global:frameCount % 2 -eq 0) {
