@@ -62,4 +62,5 @@
     We've covered a lot of ground today. We've learned how to control the terminal, how to write a simple game in PowerShell and how to test it. If you're familiar with Bash I hope you've seen some of the similarities and differences between the two. And if you're a C# developer I hope you've seen some of the similarities between C# and PowerShell.  
     PowerShell is available everywhere. It's on Windows/Linux/Mac OS/GitHub Actions/Jenkins and is a great tool to have in your toolbox.  
     I hope you've enjoyed this talk and learned something new. If you have any questions, feel free to ask them now or hit me up on linkedin/twitter they're linked on my codecamp bio.  
-    Thank you for your time.
+    Thank you for your time.  
+    Profit?
