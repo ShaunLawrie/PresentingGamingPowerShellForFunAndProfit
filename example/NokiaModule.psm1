@@ -13,7 +13,7 @@ function Write-Nokia {
   $offGreen = "#847236"
   $halfGreen = "#C6C651"
   $green = "#9bc809"
-  if($NoStartup) {
+  if ($NoStartup) {
     $offGreen = $green
   }
   Write-SpectreHost " [$darkBlue]▟[/][$grey on $darkBlue]▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂[/][$darkBlue]▙[/]"
@@ -72,7 +72,7 @@ function Write-Nokia {
   Start-Sleep -Milliseconds $RenderLineDelayMilliseconds
   Write-SpectreHost " [$darkBlue]▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[/]"
 
-  if(!$NoStartup) {
+  if (!$NoStartup) {
 
     Start-Sleep -Milliseconds ($RenderLineDelayMilliseconds * 8)
 
@@ -113,7 +113,8 @@ function Write-Nokia {
     $soundPlayer.SoundLocation = (Resolve-Path "$PSScriptRoot\resources\nokia_startup_tone.wav").Path
     $soundPlayer.PlaySync()
     $soundPlayer.Dispose()
-  } else {
+  }
+  else {
     [Console]::CursorVisible = $true
   }
 }

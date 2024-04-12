@@ -48,8 +48,8 @@ Clear-Host
 # Rendering hacks for the nokia outline
 $gamePadding = 0
 $gameTop = 0
-if($RenderInNokia) {
-    if($GameWidth -ne 10 -or $GameHeight -ne 10) {
+if ($RenderInNokia) {
+    if ($GameWidth -ne 10 -or $GameHeight -ne 10) {
         throw "Game width and height must be 10 to render inside the crappy nokia outline"
     }
     Write-Nokia
@@ -61,43 +61,46 @@ try {
     $timing = Measure-Command {
         while (!$gameOver) {
             $key = Get-LastKeyPressed
-            if($key.Key -eq "Q") {
+            if ($key.Key -eq "Q") {
                 $gameOver = $true
             }
-            if(Test-DirectionAllowed -CurrentDirection $snakeDirection -NewDirection $key.Key -Directions $directions) {
+            if (Test-DirectionAllowed -CurrentDirection $snakeDirection -NewDirection $key.Key -Directions $directions) {
                 $targetDirection = $key.Key
             }
 
             $sinceLastRender = New-TimeSpan -Start $lastRender -End (Get-Date)
-            if($sinceLastRender.TotalMilliseconds -ge $targetLoopDurationMilliseconds) {
+            if ($sinceLastRender.TotalMilliseconds -ge $targetLoopDurationMilliseconds) {
                 $lastRender = Get-Date
 
                 $powerUp = Update-PowerUp -PowerUp $powerUp -PowerUpInterval $powerUpInterval -PowerUpLifetime $powerUpLifetime
-                if($poweredUp -gt 0) {
+                if ($poweredUp -gt 0) {
                     $poweredUp--
                 }
 
                 $snakeDirection = Add-SnakeHead -Direction $targetDirection
                 
                 $latestPosition = $global:snake[$global:snake.Count - 1]
-                if(Test-IsSnake -Position $latestPosition -ExcludeHead -PoweredUp $poweredUp) {
+                if (Test-IsSnake -Position $latestPosition -ExcludeHead -PoweredUp $poweredUp) {
                     $soundQueue.Enqueue(@{ Frequency = 900; Duration = 250 })
                     $soundQueue.Enqueue(@{ Frequency = 800; Duration = 100 })
                     $soundQueue.Enqueue(@{ Frequency = 700; Duration = 100 })
                     $soundQueue.Enqueue(@{ Frequency = 100; Duration = 500 })
                     Start-Sleep -Seconds 2
                     $gameOver = $true
-                } elseif(Test-IsFood -Position $latestPosition -Food $food) {
+                }
+                elseif (Test-IsFood -Position $latestPosition -Food $food) {
                     $soundQueue.Enqueue(@{ Frequency = 400; Duration = 100 })
                     $food = New-Food
                     $score++
-                } elseif(Test-IsPowerUp -Position $latestPosition -PowerUp $powerUp) {
+                }
+                elseif (Test-IsPowerUp -Position $latestPosition -PowerUp $powerUp) {
                     $soundQueue.Enqueue(@{ Frequency = 600; Duration = 100 })
                     $soundQueue.Enqueue(@{ Frequency = 800; Duration = 200 })
                     $powerUp = $null
                     $poweredUp = $poweredUpLifetime
                     $score += 10
-                } else {
+                }
+                else {
                     Remove-SnakeTail
                 }
 
@@ -106,18 +109,20 @@ try {
                 $global:frameCount++
             }
         }
-        if($RenderInNokia) {
+        if ($RenderInNokia) {
             [Console]::SetCursorPosition(0, 0)
             Write-Nokia -NoStartup
             $currentPosition = [Console]::GetCursorPosition()
             Write-Host "`e[19A`e[9C" -NoNewline
             Write-Host -ForegroundColor "Black" "$($PSStyle.Background.FromRgb(155, 200, 9))Score: $score$($PSStyle.Reset)" -NoNewline
             [Console]::SetCursorPosition($currentPosition[0], $currentPosition[1])
-        } else {
+        }
+        else {
             Write-Host "Game over, score was: $score"
         }
         [Console]::CursorVisible = $true
     }
-} finally {
+}
+finally {
     Stop-SoundProcessor
 }

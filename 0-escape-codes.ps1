@@ -12,7 +12,7 @@ function Clear-Line {
 }
 
 try {
-    while($true) {
+    while ($true) {
         [Console]::SetCursorPosition(0, 0)
 
         Write-Host ""
@@ -25,31 +25,31 @@ try {
         # Yeah this is hard to read. It's a mixture of spectre console and terminal escape codes because I wanted to put them in a table
         @(
             @{
-                Code = "[Magenta2_1]``a[/]"
+                Code        = "[Magenta2_1]``a[/]"
                 Description = "alert"
             },
             @{
-                Code = "[Magenta2_1]``e[[4m[/]"
+                Code        = "[Magenta2_1]``e[[4m[/]"
                 Description = "underline text"
             },
             @{
-                Code = "[Magenta2_1]``e[[0m[/]"
+                Code        = "[Magenta2_1]``e[[0m[/]"
                 Description = "reset text"
             },
             @{
-                Code = "[Magenta2_1]``e[[38;2;255;0;0m[/]"
+                Code        = "[Magenta2_1]``e[[38;2;255;0;0m[/]"
                 Description = "foreground rgb text"
             },
             @{
-                Code = "[Magenta2_1]``e[[48;2;0;155;0m[/]"
+                Code        = "[Magenta2_1]``e[[48;2;0;155;0m[/]"
                 Description = "background rgb text"
             },
             @{
-                Code = "[Magenta2_1]``e[[1A[/] $greySlash [Magenta2_1]``e[[1B[/] $greySlash [Magenta2_1]``e[[1C[/] $greySlash [Magenta2_1]``e[[1D[/]"
+                Code        = "[Magenta2_1]``e[[1A[/] $greySlash [Magenta2_1]``e[[1B[/] $greySlash [Magenta2_1]``e[[1C[/] $greySlash [Magenta2_1]``e[[1D[/]"
                 Description = "move cursor 1 up / down / right / left"
             },
             @{
-                Code = "[Magenta2_1]``r[/]"
+                Code        = "[Magenta2_1]``r[/]"
                 Description = "move cursor to start of line"
             }
         ) | Format-SpectreTable -Property Code, Description -Width ([Console]::WindowWidth) -Border Rounded -Color Grey30 -HeaderColor Grey30 -AllowMarkup
@@ -69,10 +69,11 @@ try {
         Write-Host $textInterpreted
         Write-Host $PSStyle.Reset -NoNewline
 
-        if($text -eq "exit") {
+        if ($text -eq "exit") {
             break
         }
     }
-} finally {
+}
+finally {
     Write-Host "`e[?1049l" # Restore the original screen buffer
 }
