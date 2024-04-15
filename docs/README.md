@@ -5,9 +5,9 @@ Some pre-requisites are needed to get this working. If you run into any issues s
 
 ## ✅ Pre-requisites
 
- - A decent terminal emulator (cmd.exe doesn't count) - I use [Windows Terminal](https://aka.ms/terminal)
- - A version of PowerShell > 7 https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.4
- - The `pwsh` command should be available in your terminal, if it's not then you may need to quit and open it again to refresh the path
+- A decent terminal emulator (cmd.exe doesn't count) - I use [Windows Terminal](https://aka.ms/terminal)
+- A version of PowerShell > 7 https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.4
+- The `pwsh` command should be available in your terminal, if it's not then you may need to quit and open it again to refresh the path
 
 ## 👟 Getting started
 
