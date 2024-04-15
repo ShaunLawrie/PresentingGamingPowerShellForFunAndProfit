@@ -1,10 +1,13 @@
 # CodeCampTalk2024
 
-[![alt text](docs/image.png)](https://www.codecampwellington.nz/)
+[![Code Camp Pic](docs/image.png)](https://www.codecampwellington.nz/)
+![Pic of Me](docs/image-of-me.png)
 
 ## Intro
 
 This is the talk I gave at Code Camp Wellingtion. I've re-recorded it with hopefully fewer mistakes and uploaded the output of this live coding session in the `demo` folder. For instructions on how to get this running see [docs/README.md](docs/README.md). For the talking notes from the presentation I used see below 👇🏻
+
+## Content
 
 - **Who am I**  
   I'm Shaun, I work at PartsTrader.
