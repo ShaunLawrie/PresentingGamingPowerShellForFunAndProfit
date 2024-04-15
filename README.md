@@ -16,11 +16,6 @@ For instructions on how to get this running see [docs/README.md](docs/README.md)
 
 ## Content
 
-- **Who am I**  
-  I'm Shaun, I work at PartsTrader.
-  What's PartsTrader? Cars go vroom, have a little smash and then the repair shops use our platform to procure parts.  
-  I'm Platform Engineering lead and cover things like application stability and software delivery with my team.
-
 - **Intro to terminals**  
   Hi and welcome to my talk on CodeCamp 2024.  
   Today we are going to talk about shell scripting and terminals.  
