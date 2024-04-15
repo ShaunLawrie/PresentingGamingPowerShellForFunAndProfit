@@ -1,11 +1,18 @@
-# CodeCampTalk2024
+# Code Camp Talk 2024
 
 [![Code Camp Pic](docs/image.png)](https://www.codecampwellington.nz/)
+
+## Gaming PowerShell for Fun and Profit
+
 ![Pic of Me](docs/image-of-me.png)
 
 ## Intro
 
-This is the talk I gave at Code Camp Wellingtion. I've re-recorded it with hopefully fewer mistakes and uploaded the output of this live coding session in the `demo` folder. For instructions on how to get this running see [docs/README.md](docs/README.md). For the talking notes from the presentation I used see below 👇🏻
+This is the talk I gave at Code Camp Wellingtion. I've re-recorded it with hopefully fewer mistakes and uploaded the output of this live coding session in the [`/demo`](/demo) folder.
+
+I originally planned on writing some tutorials but life has been too busy so you'll have to settle for a recorded session. It's only taken two years [since I had the idea](https://twitter.com/shaun_lawrie/status/1574924600210706433) to get around to this. Thanks to Code Camp for motivating me.
+
+For instructions on how to get this running see [docs/README.md](docs/README.md). For the talking notes from the presentation I used see below 👇🏻
 
 ## Content
 
