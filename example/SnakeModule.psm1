@@ -5,7 +5,6 @@ $script:oppositeDirections = @{
     "DownArrow"  = "UpArrow"
 }
 $script:PowershellSounds = $null
-$script:PowershellMusic = $null
 $script:Runspace = $null
 $script:SoundHandle = $null
 
@@ -287,8 +286,7 @@ function Write-GameGrid {
 
 function Start-SoundProcessor {
     param (
-        [System.Collections.Queue] $SoundQueue,
-        [string] $Music
+        [System.Collections.Queue] $SoundQueue
     )
     if ($null -eq $script:Runspace) {
         $script:Runspace = [runspacefactory]::CreateRunspace()
@@ -309,18 +307,10 @@ function Start-SoundProcessor {
             }) | Out-Null
         $script:SoundHandle = $script:PowershellSounds.BeginInvoke()
     }
-    if ($Music -and $null -eq $script:SoundPlayer) {
-        $script:SoundPlayer = [System.Media.SoundPlayer]::new()
-        $script:SoundPlayer.SoundLocation = $Music
-        $script:SoundPlayer.PlayLooping()
-    }
 }
 
 function Stop-SoundProcessor {
     try {
-        $script:SoundPlayer.Stop()
-        $script:SoundPlayer.Dispose()
-
         $script:PowershellSounds.Stop()
         $script:Runspace.Close()
         $script:PowershellSounds.Dispose()

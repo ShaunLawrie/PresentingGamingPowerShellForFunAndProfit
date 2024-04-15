@@ -40,7 +40,7 @@ $lastRender = (Get-Date).AddSeconds(-10)
 
 # sound effects background thread
 $soundQueue = [System.Collections.Queue]::Synchronized([System.Collections.Queue]::new())
-Start-SoundProcessor -SoundQueue $soundQueue -Music (Resolve-Path "$PSScriptRoot\resources\oldsongfromuni.wav").Path
+Start-SoundProcessor -SoundQueue $soundQueue
 
 Clear-Host
 [Console]::CursorVisible = $false

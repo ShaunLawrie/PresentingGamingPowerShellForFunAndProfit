@@ -27,7 +27,7 @@ For instructions on how to get this running see [docs/README.md](docs/README.md)
   
   - **What's the game?**  
     We're going to write a simple snake game in the terminal. In preparing this my partner pointed out I'm older than I feel and some people might not be aware of the game. So here's a quick demo of what it looked like when I was playing on my Nokia at high school.  
-    *Show `complete/Snake.ps1`*
+    *Show `example/Snake.ps1`*
 
 - **Intro to powershell**
   - **Intro to the ps1 script**  
