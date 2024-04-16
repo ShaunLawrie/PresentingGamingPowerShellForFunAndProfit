@@ -11,14 +11,24 @@ Some pre-requisites are needed to get this working. If you run into any issues s
 
 ## 👟 Getting started
 
-I wrote this during the demo, the game I created is in [`example/`](example/).  
+I wrote this during the demo, the game I created is in [`livedemo/`](livedemo/).  
 To run the game you can use the following command:
 
 ```pwsh
-git clone git@github.com:ShaunLawrie/PwshSpectreConsole
-cd PwshSpectreConsole
+git clone git@github.com:ShaunLawrie/PresentingGamingPowerShellForFunAndProfit
+cd PresentingGamingPowerShellForFunAndProfit
+cd livedemo
+pwsh ./1-intro-to-scripts.ps1
+```
+
+To run the nokia snake game (this thing is a super-hack no judging when you see the source code 😂) you can use the following command:
+
+```pwsh
+git clone git@github.com:ShaunLawrie/PresentingGamingPowerShellForFunAndProfit
+cd PresentingGamingPowerShellForFunAndProfit
 cd example
-pwsh .\game.ps1
+Install-Module PwshSpectreConsole -Scope CurrentUser
+pwsh ./Snake.ps1
 ```
 
 ## 👋 Getting Help
